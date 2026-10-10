@@ -1,0 +1,8 @@
+.env
+.env.*
+*.db
+*.db-*
+*.sqlite*
+auth.json
+node_modules/
+__pycache__/

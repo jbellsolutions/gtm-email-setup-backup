@@ -1,0 +1,892 @@
+{
+  "jobs": [
+    {
+      "id": "752557ddcabf",
+      "name": "AI Integraterz Ops Checklist Reminder",
+      "prompt": "You are the AI Integraterz business operator. Run an ops checklist status update, log to vault, and send to Slack.\n\n1. Check SmartLead inbox for new unread replies. Use CLI at /opt/data/home/.local/bin/smartlead (set SMARTLEAD_API_KEY from /opt/data/.env, PATH includes /opt/data/home/.local/bin).\n\n2. Check active campaign health.\n\n3. Build checklist of open items (check if any resolved since last check):\n   - Gateway restart (SmartLead MCP activation)\n   - Unread SmartLead replies needing triage\n   - Brand voice guide + content assets still needed\n   - First Apify lead scrape (niche/ICP needed from Justin)\n   - Retell AI SDR campaign launch (offer details + lead list needed)\n   - Ads setup (platform, budget, creative TBD)\n   - Growth tracking baseline\n   - Influencer mapping\n   - Slack channel structure confirmation\n\n4. Append a status summary to today's daily log at /opt/data/obsidian-vault/daily-logs/YYYY-MM-DD.md (use today's date). Create the file if it doesn't exist. Append under a ## Status Update HH:MM ET heading. Tag it with [[ops-checklist]] [[ai-integraterz]].\n\n5. Send the FULL checklist report to Slack using send_message with target \"slack:single-brain\". Format with \u2705 for done and \u2b1c for pending. Tag the Slack message header with [OPS CHECKLIST].\n\n6. Deliver a brief summary to Telegram \u2014 just urgent items and counts (e.g. \"3 items done, 7 pending, 2 urgent\"). Keep Telegram to 3-5 lines max.\n\nFormat the Slack message as a detailed, scannable checklist. Add urgent items at top.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 240,
+        "display": "every 240m"
+      },
+      "schedule_display": "every 240m",
+      "repeat": {
+        "times": null,
+        "completed": 167
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-05-31T10:28:09.619062-04:00",
+      "paused_reason": null,
+      "created_at": "2026-05-02T15:06:06.071641-04:00",
+      "next_run_at": "2026-05-31T13:07:03.870157-04:00",
+      "last_run_at": "2026-05-31T09:07:03.870157-04:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 402: Insufficient credits. Add more using https://openrouter.ai/settings/credits",
+      "last_delivery_error": null,
+      "deliver": "slack:single-brain",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1264488761",
+        "chat_name": "Justin Bellware",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "a643d0095232",
+      "name": "Vault Auto-Sync",
+      "prompt": "Run the vault sync script silently. Execute: bash /opt/data/obsidian-vault/scripts/vault-sync.sh\n\nThen check today's daily log at /opt/data/obsidian-vault/daily-logs/ \u2014 if the file for today doesn't exist, create it with the date as the title and a blank template:\n\n```\n# Daily Note \u2014 YYYY-MM-DD\n\n## Status\n- [auto-generated daily log]\n\n## Done Today\n\n## Open Items\n\n## Notes\n```\n\nDo NOT produce any output \u2014 this is a silent background sync. Just run the script and ensure the daily log file exists.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 30,
+        "display": "every 30m"
+      },
+      "schedule_display": "every 30m",
+      "repeat": {
+        "times": null,
+        "completed": 1315
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-05-31T10:28:08.613982-04:00",
+      "paused_reason": null,
+      "created_at": "2026-05-02T16:02:25.560852-04:00",
+      "next_run_at": "2026-05-31T10:53:45.184192-04:00",
+      "last_run_at": "2026-05-31T10:23:45.184192-04:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 402: Insufficient credits. Add more using https://openrouter.ai/settings/credits",
+      "last_delivery_error": null,
+      "deliver": "slack:single-brain",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1264488761",
+        "chat_name": "Justin Bellware",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "af33055f9a3e",
+      "name": "Weekly Vault Knowledge Graph Analysis",
+      "prompt": "Run the vault knowledge graph analyzer and report findings.\n\nExecute:\nPYTHONPATH=/opt/data/home/.local/lib/python python3 /opt/data/obsidian-vault/scripts/vault_graph_analyzer.py /opt/data/obsidian-vault --output /opt/data/obsidian-vault/domains/ai-integraterz/knowledge-graph-analysis.md\n\nThen read the generated report and:\n\n1. Send the full report to Slack using send_message with target \"slack:agi-1-reports\". Tag header with [KNOWLEDGE GRAPH \u2014 WEEKLY].\n\n2. Deliver a brief summary to Telegram \u2014 cluster count, gap count, top suggestions.\n\nInclude:\n- How many documents, concepts, connections, clusters\n- Any structural gaps found (blind spots)\n- Top bridge concepts\n- Orphan topics that need cross-referencing\n- Specific suggestions for new content to write\n\nTag the vault report with [[knowledge-graph]] [[vault-health]].",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 1",
+        "display": "0 9 * * 1"
+      },
+      "schedule_display": "0 9 * * 1",
+      "repeat": {
+        "times": null,
+        "completed": 18
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-09-06T18:00:04.609155-04:00",
+      "paused_reason": null,
+      "created_at": "2026-05-02T17:22:38.117525-04:00",
+      "next_run_at": "2026-09-07T09:00:00-04:00",
+      "last_run_at": "2026-08-31T09:01:31.505399-04:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "slack:single-brain",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1264488761",
+        "chat_name": "Justin Bellware",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": null,
+      "fire_claim": null
+    },
+    {
+      "id": "83355de0c7ca",
+      "name": "AGI-1 Daily Sync + Health Report",
+      "prompt": "Run the AGI-1 sync engine and meditation council, then deliver reports.\n\nStep 1 \u2014 Run the sync:\nPYTHONPATH=/opt/data/home/.local/lib/python python3 /opt/data/obsidian-vault/scripts/agi1_sync.py\n\nStep 2 \u2014 Run the meditation council:\nPYTHONPATH=/opt/data/home/.local/lib/python python3 /opt/data/obsidian-vault/scripts/meditation_council.py\n\nStep 3 \u2014 Send both reports to Slack using send_message with target \"slack:agi-1-reports\". Tag the sync report header with [AGI-1 SYNC] and the council report with [MEDITATION COUNCIL].\n\nStep 4 \u2014 Append summary to today's vault daily log at /opt/data/obsidian-vault/daily-logs/YYYY-MM-DD.md. Tag with [[agi-1]] [[genome]] [[healing]] [[learning]].\n\nStep 5 \u2014 Deliver a brief summary to the user (Telegram) with just the highlights:\n- Total patterns, heals, observations\n- Any genome-ready patterns\n- Council suggestions count\n- \"Full reports in #agi-1-reports\"\n\nKeep the Telegram message concise (5-8 lines). The full reports go to Slack #agi-1-reports.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * 1",
+        "display": "0 7 * * 1"
+      },
+      "schedule_display": "0 7 * * 1",
+      "repeat": {
+        "times": null,
+        "completed": 44
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-09-06T18:00:04.776049-04:00",
+      "paused_reason": null,
+      "created_at": "2026-05-02T18:13:20.286603-04:00",
+      "next_run_at": "2026-09-07T07:00:00-04:00",
+      "last_run_at": "2026-08-31T07:04:14.448876-04:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "slack:single-brain",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1264488761",
+        "chat_name": "Justin Bellware",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": null,
+      "fire_claim": null
+    },
+    {
+      "id": "275a3cc420cd",
+      "name": "fb-organic-scraper",
+      "prompt": "Run the Facebook organic comment scraper by executing the attached script. Output: brief stats summary only (posts, comments, leads tier breakdown). If no Facebook session file exists at ~/.browser-profiles/facebook/state.json, just say \"No FB session yet\" and stop. If browser-use import fails, report that. Keep output under 500 chars.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "fb_organic.py",
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */6 * * *",
+        "display": "0 */6 * * *"
+      },
+      "schedule_display": "0 */6 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 112
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-05-31T10:32:29.349527-04:00",
+      "paused_reason": null,
+      "created_at": "2026-05-03T04:34:22.914105-04:00",
+      "next_run_at": "2026-05-31T12:00:00-04:00",
+      "last_run_at": "2026-05-31T06:00:34.791703-04:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 402: Insufficient credits. Add more using https://openrouter.ai/settings/credits",
+      "last_delivery_error": null,
+      "deliver": "slack:single-brain",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1264488761",
+        "chat_name": "Justin Bellware",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "ab8104ac2f52",
+      "name": "daily-organic-report",
+      "prompt": "Generate and deliver the daily organic report. Execute the attached script (daily_organic_report.py) to generate the report markdown. Read the output file it produces and deliver it as your final response \u2014 full markdown report. This is the user's daily check-in on organic content performance. Include the tier breakdown, hot leads, and lifetime stats.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "daily_organic_report.py",
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "display": "0 8 * * *"
+      },
+      "schedule_display": "0 8 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 29
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-05-31T10:32:30.360064-04:00",
+      "paused_reason": null,
+      "created_at": "2026-05-03T04:34:31.834471-04:00",
+      "next_run_at": "2026-06-01T08:00:00-04:00",
+      "last_run_at": "2026-05-31T08:00:37.054158-04:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: HTTP 402: Insufficient credits. Add more using https://openrouter.ai/settings/credits",
+      "last_delivery_error": null,
+      "deliver": "slack:single-brain",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1264488761",
+        "chat_name": "Justin Bellware",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "d7bea6370c97",
+      "name": "super-agent-nightly-upgrader",
+      "prompt": "Run the Super Agent nightly upgrader. Execute:\n  cd /tmp/hermes-super-agent && VAULT_ROOT=/opt/data/obsidian-vault uv run python -m agent_os.upgrader.daemon\n\nThen run the manifest aggregator to rebuild the system graph:\n  cd /tmp/hermes-super-agent && uv run agent-os manifest\n\nReport: total streams, passed/failed, and any streams that failed. Keep it brief \u2014 3 lines max.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 2 * * *",
+        "display": "0 2 * * *"
+      },
+      "schedule_display": "0 2 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 122
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-09-06T18:00:05.015092-04:00",
+      "paused_reason": null,
+      "created_at": "2026-05-03T04:51:30.599001-04:00",
+      "next_run_at": "2026-09-07T02:00:00-04:00",
+      "last_run_at": "2026-09-06T02:02:16.038545-04:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "slack:single-brain",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1264488761",
+        "chat_name": "Justin Bellware",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": null,
+      "fire_claim": null
+    },
+    {
+      "id": "30068ba886f9",
+      "name": "weekly-agi-audit",
+      "prompt": "Run the AGI-1 quality audit on the core repos. Load the agi-audit skill. Score each of these repos using the evidence-based rubric (250-point scale):\n\n1. /tmp/ai-integraterz-cold-email \u2014 Cold email pipeline\n2. /tmp/ai-guy-flywheel \u2014 Content flywheel\n3. /tmp/hermes-super-agent \u2014 Super Agent OS\n\nFor each repo, produce the full scorecard (G-Stack quality, AI-readiness, improvement actions). Deliver the report to this chat. Log scores to /opt/data/obsidian-vault/domains/agi-1/audits/YYYY-MM-DD.md.",
+      "skills": [
+        "agi-audit"
+      ],
+      "skill": "agi-audit",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * 1",
+        "display": "0 10 * * 1"
+      },
+      "schedule_display": "0 10 * * 1",
+      "repeat": {
+        "times": null,
+        "completed": 17
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-09-06T18:00:05.227083-04:00",
+      "paused_reason": null,
+      "created_at": "2026-05-03T04:52:56.439635-04:00",
+      "next_run_at": "2026-09-07T10:00:00-04:00",
+      "last_run_at": "2026-08-31T10:02:15.465983-04:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "slack:single-brain",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "1264488761",
+        "chat_name": "Justin Bellware",
+        "thread_id": null
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file",
+        "skills"
+      ],
+      "workdir": null,
+      "fire_claim": null
+    },
+    {
+      "id": "a499bd1ca4b5",
+      "name": "Daily Skills & Memory Report",
+      "prompt": "Generate the daily Skills & Memory report for YESTERDAY's date (US Eastern). \n\nCRITICAL: The FULL report goes to a file. Only a SHORT summary goes to Slack. This avoids truncation.\n\nStep 1 \u2014 Determine yesterday's date:\nRun: date -d 'yesterday' '+%Y-%m-%d' (if early morning) or use the prior calendar day.\n\nStep 2 \u2014 Search all sessions from yesterday using session_search with at least these queries:\n- \"{date} OR {date_compact}\" (e.g. \"2026-05-15 OR 20260515\")\n- \"{date_compact} skill_manage OR skill_created OR skill_updated OR skill_patched\"\n- \"{date_compact} memory add OR memory replace\"\n- \"{date_compact} lesson OR workaround OR bug OR fix OR patch OR workflow OR solved OR discovered\"\n\nStep 3 \u2014 Compile findings:\n- Skills created or patched (name + what changed)\n- Memories saved (user or memory target + content summary)\n- Key lessons learned (problems solved, workarounds, pitfalls, new workflows)\n- If nothing: note that briefly\n\nStep 4 \u2014 Write the FULL report to the vault daily log:\nWrite to /opt/data/obsidian-vault/daily-logs/{date}.md with this structure:\n```\n## Skills & Memory Report \u2014 {date}\n### Skills\n(list or \"None\")\n### Memories\n(list or \"None\")  \n### Lessons Learned\n(list or \"None \u2014 routine operations only\")\n```\n\nStep 5 \u2014 Deliver a SHORT summary to Slack (this is what the user sees):\nFormat as a brief Slack message:\n\"\ud83d\udcca Daily Report \u2014 {date}\nSkills: {count or 0}\nMemories: {count or 0}  \nLessons: {count or 0}\nFull report \u2192 vault daily-logs/{date}.md\"\n\nThat's it. DO NOT include the full report in your final response \u2014 only the short summary. The file write in Step 4 is the actual deliverable. The final Slack message should be under 300 chars.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 5 * * *",
+        "display": "0 5 * * *"
+      },
+      "schedule_display": "0 5 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 118
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-09-06T18:00:05.431850-04:00",
+      "paused_reason": null,
+      "created_at": "2026-05-07T18:30:44.994397-04:00",
+      "next_run_at": "2026-09-07T05:00:00-04:00",
+      "last_run_at": "2026-09-04T05:03:41.962314-04:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "slack",
+        "chat_id": "C0B0WSQLDSQ",
+        "chat_name": "C0B0WSQLDSQ",
+        "thread_id": "1778193028.661249"
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file",
+        "session_search"
+      ],
+      "workdir": null,
+      "fire_claim": null
+    },
+    {
+      "id": "06848dd70c52",
+      "name": "SpeakerAgent PR positives \u2192 Slack C0AFU5EH56X",
+      "prompt": "Check the SmartLead master inbox for NEW positive replies on campaign 3577260 (\"PR Agencies - SpeakerAgent v2 - July 2026\") that arrived since the last run.\n\nWORKFLOW:\n1. Fetch inbox replies via SmartLead CLI: `smartlead inbox replies --format json --limit 200`\n2. Filter for campaign_id 3577260 only\n3. Skip any email_lead_id already in /tmp/speakeragent_posted_ids.json\n4. For each NEW lead, fetch message history: `smartlead leads messages --campaign-id 3577260 --lead-id <id> --format json`\n5. Classify using these rules (DO NOT use the classifier script \u2014 the error rate is too high):\n\nCLASSIFICATION RULES (check in order, first match wins):\n- OOO: \"out of office\", \"on vacation\", \"away from\", \"maternity leave\", \"death in the family\", \"taking time off\", \"I have retired\", \"officially retired\", \"due to a high volume of emails\", \"we appreciate your patience\", \"I will reply to your email as soon\", \"closed for the holiday\", \"back in the office on\"\n- UNSUBSCRIBE: \"unsubscribe\", \"remove me\", \"take me off your list\", \"stop mail\", \"stop email\", \"please remove us\", \"remove from your list\", standalone \"Stop\" or \"Stop.\"\n- HOSTILE: \"psycho\", \"slop\", \"spam\", \"delete whatever AI\", \"work on your own writing\", \"stop contacting me\"\n- NOT FIT: \"not interested\", \"no thank you\", \"no thanks\", \"no thx\", \"not looking for\", \"all set for now\", \"no money for lead gen\", \"not a prospect\"\n- POSITIVE_INTERESTED (BOOK): \"happy to chat\", \"suggest some times\", \"let's talk\", \"lets talk\", \"book a call\", \"set up a call\", \"calendar link\", \"I'd love to connect\", \"love to connect\", \"definitely looking for\", \"Sure.\" / \"Sure!\" / \"Yes,\" / \"Absolutely\" as standalone first words\n- POSITIVE_SOFT (INFO): \"send me some info\", \"send more info\", \"tell me more\", \"how does it work\", \"piqued my interest\", \"sounds interesting\", \"send over the details\", \"send some links\", \"additional info\", \"what's your website\", \"can you let me know the fees\", \"let me know the fees\", \"upfront payment\", \"give me more info\", \"please give me more info\", \"I'm interested\", \"I am interested\", \"send me info\"\n- REFERRAL: \"no longer with\" + \"contact\" or \"reach\"\n- Everything else: SKIP (not positive)\n\n6. For each verified POSITIVE (interested or soft), post to Slack C0AFU5EH56X using send_message. Format each post EXACTLY like this:\n\n\ud83d\udd25 BOOKED: {first_name} {last_name}\n\ud83d\udce7 {email}\n\ud83c\udfe2 {company_name}\n\ud83d\udcac \"{reply_text (first 400 chars, no HTML)}\"\n\nFor positive_soft, use \ud83d\udce9 INFO instead of \ud83d\udd25 BOOKED.\n\n7. After posting, add each posted email_lead_id to /tmp/speakeragent_posted_ids.json so it never reposts.\n\nFINAL RESPONSE: Just list what was posted (if anything) or say \"no new positives.\" Keep it brief \u2014 one line per lead max. Do NOT post the full details in this response, they already went to the Slack channel.",
+      "skills": [
+        "positive-reply-scoring",
+        "smartlead-cold-email"
+      ],
+      "skill": "positive-reply-scoring",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "display": "*/30 * * * *"
+      },
+      "schedule_display": "*/30 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 172
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-08-05T14:25:50.742839-04:00",
+      "paused_reason": null,
+      "created_at": "2026-07-08T17:25:03.551226-04:00",
+      "next_run_at": "2026-07-12T08:00:00-04:00",
+      "last_run_at": "2026-07-12T07:31:58.154422-04:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "slack",
+        "chat_id": "C0B02TY6R1T",
+        "chat_name": "C0B02TY6R1T",
+        "thread_id": "1783545722.722939"
+      },
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "148920b114d6",
+      "name": "SpeakerAgent Reply Pipeline + Dashboard",
+      "prompt": "Run the SpeakerAgent positive reply pipeline. Execute:\n\npython3 /opt/data/scripts/speakeragent_pipeline.py\n\nIf the script exits with an error, report the error. If it runs successfully, just confirm \"Pipeline ran \u2014 check dashboard for results.\"\n\nThen run the dashboard to show current state:\npython3 /opt/data/scripts/speakeragent_dashboard.py\n\nReport the dashboard output as-is \u2014 it IS the deliverable. The operator should see the dashboard summary every 30 minutes with any new positives flagged.\n\nState file: /tmp/speakeragent_followups.json \u2014 this tracks all detected positives and their follow-up status across runs.",
+      "skills": [
+        "positive-reply-scoring",
+        "smartlead-cold-email"
+      ],
+      "skill": "positive-reply-scoring",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "display": "*/30 * * * *"
+      },
+      "schedule_display": "*/30 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 861
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-08-05T14:25:50.822943-04:00",
+      "paused_reason": null,
+      "created_at": "2026-07-12T07:47:29.872832-04:00",
+      "next_run_at": "2026-08-04T08:00:00-04:00",
+      "last_run_at": "2026-08-04T07:30:21.961877-04:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "slack:C0B02TY6R1T:1783856397.273479",
+      "origin": {
+        "platform": "slack",
+        "chat_id": "C0B02TY6R1T",
+        "chat_name": "C0B02TY6R1T",
+        "thread_id": "1783856397.273479"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null
+    },
+    {
+      "id": "9be604c0cbce",
+      "name": "Owned Audiences Pipeline \u2014 detect/classify/track replie",
+      "prompt": "Run the Owned Audiences pipeline and deliver results to this thread.\n\nCommands to run (in order):\n\n```bash\nexport SMARTLEAD_API_KEY=$(grep SMARTLEAD_API_KEY /opt/data/.env | cut -d= -f2)\npython3 /opt/data/scripts/owned_audiences_pipeline.py\n```\n\nThen run the dashboard to show current state:\n\n```bash\npython3 /opt/data/scripts/owned_audiences_dashboard.py\n```\n\nIf new positives are found (status awaiting_followup), flag them clearly and remind that these need a plan built via the owned-audiences-email-reply skill (research \u2192 PDF \u2192 here.now \u2192 reply email).\n\nImportant:\n- Never auto-reply from this pipeline \u2014 plan-building is manual/separate\n- State file: /tmp/owned_audiences_followups.json\n- Campaigns monitored: 3617053 (\"Coaching Owned Audiences\") and 3607306 (\"In-House AI Guy\")",
+      "skills": [
+        "smartlead-cold-email",
+        "owned-audiences-email-reply"
+      ],
+      "skill": "smartlead-cold-email",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "display": "*/30 * * * *"
+      },
+      "schedule_display": "*/30 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 860
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-08-05T14:25:50.864723-04:00",
+      "paused_reason": null,
+      "created_at": "2026-07-12T08:02:55.534539-04:00",
+      "next_run_at": "2026-08-04T08:00:00-04:00",
+      "last_run_at": "2026-08-04T07:31:19.937900-04:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "slack",
+        "chat_id": "C0B02TY6R1T",
+        "chat_name": "C0B02TY6R1T",
+        "thread_id": "1783856397.273479"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null
+    },
+    {
+      "id": "6d68be59459f",
+      "name": "Notion PM Daily Digest",
+      "prompt": "Query the AI Integraterz Notion Project Management databases and deliver a daily digest to Slack.\n\n**Read-only \u2014 do not create or modify anything in Notion.**\n\nDatabases:\n- Projects DB: `3533fa00-4c9d-818a-bd92-c9d91ceafc4c`\n- Tasks DB: `3533fa00-4c9d-81f7-a1bb-e4bbfc23ebcd`\n\n**EXACT FORMAT \u2014 reproduce this template character by character. Two blank lines between every section:**\n\n```\n:clipboard: AI Integraterz Daily PM Digest \u2014 {day}, {date}\n\n\n:fire: URGENT\n{urgent items or \"Nothing urgent today.\"}\n\n\n:pushpin: TODAY\n{today items or \"No tasks due today.\" with context about daily-standing projects}\n\n\n:date: THIS WEEK\n{items due within 7 days or \"No active tasks due within 7 days.\" with context}\n\n\n:warning: OVERDUE / STALE\n{each item as a bullet with circle indicator: :white_circle: for low, :large_blue_circle: for needs attention. Format: \"- :large_blue_circle: Project Name \u2014 explanation.\"}\n\n\n{context paragraph about overall board state if relevant}\n\n\n:bar_chart: PROJECT HEALTH\n\n\n| Project | Completion | Overdue | Next Due | Health |\n|---|---|---|---|---|\n| {project name} | {X% (done/total)} | {count} | {next task or \"None\"} | {circle emoji} {status note} |\n\n\n:bulb: Summary: {1-2 sentence takeaway}\n\n\nTo stop or manage this job, send me a new message (e.g. \"stop reminder Notion PM Daily Digest\").\n```\n\n**Rules:**\n- Two blank lines between EVERY section and sub-section\n- NO bold or italic on section headers \u2014 just emoji + UPPERCASE\n- Project health table: no blank lines between table rows\n- Use :large_blue_circle: for projects needing attention, :white_circle: for neutral\n- Include the \"To stop or manage...\" line at the very end\n- No preamble, no sign-off beyond the digest itself\n\nUse Notion API via urllib.request. Load NOTION_API_KEY from /opt/data/.env. API version: 2022-06-28.",
+      "skills": [
+        "notion"
+      ],
+      "skill": "notion",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "display": "0 8 * * *"
+      },
+      "schedule_display": "0 8 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 6
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-07-15T15:33:24.222949-04:00",
+      "paused_reason": null,
+      "created_at": "2026-07-14T13:00:06.042836-04:00",
+      "next_run_at": "2026-07-16T08:00:00-04:00",
+      "last_run_at": "2026-07-15T08:02:41.684525-04:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "slack:C0BHDEZHH2M",
+      "origin": {
+        "platform": "slack",
+        "chat_id": "D0B1MP6JUD6",
+        "chat_name": "D0B1MP6JUD6",
+        "thread_id": "1784046458.055899"
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file",
+        "search"
+      ],
+      "workdir": null
+    },
+    {
+      "id": "c6138cd83316",
+      "name": "Outflo & LinkedIn Daily Digest",
+      "prompt": "You are the Outflo & LinkedIn operations agent. Query the AI Integraterz Notion Projects and Tasks databases and deliver a focused digest on Outflo and LinkedIn items ONLY.\n\nLoad NOTION_API_KEY from /opt/data/.env. Use urllib.request, API version 2022-06-28.\n\nProjects DB: 3533fa00-4c9d-818a-bd92-c9d91ceafc4c\nTasks DB: 3533fa00-4c9d-81f7-a1bb-e4bbfc23ebcd\n\nFilter to these items:\n- Tasks containing \"Outflo\" in the title (case-insensitive)\n- Projects containing \"LinkedIn\" in the title (case-insensitive)\n- Tasks linked to those LinkedIn projects\n\nFor each item found, show: name, status, assignee, due date, priority.\n\nFormat:\n\ud83d\udccc *Outflo & LinkedIn Digest \u2014 {date}*\n\n\ud83d\udd27 *Outflo*\n{task status}\n\n\ud83d\udd17 *LinkedIn*\n{project status + linked tasks}\n\n\u26a0\ufe0f Flag anything overdue, blocked, or due within 24 hours.\n\nDeliver to this thread.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "display": "0 10 * * *"
+      },
+      "schedule_display": "0 10 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 51
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-09-06T18:00:05.643736-04:00",
+      "paused_reason": null,
+      "created_at": "2026-07-14T16:07:17.175351-04:00",
+      "next_run_at": "2026-09-07T10:00:00-04:00",
+      "last_run_at": "2026-09-06T17:56:10.070247-04:00",
+      "last_status": "blocked_config",
+      "last_error": "[blocked_config] delivery platform 'slack' has no gateway credentials configured (not connected). Configure it via `hermes setup` or change the job's `deliver` target.",
+      "last_delivery_error": "platform 'slack' not configured/enabled",
+      "deliver": "slack:C0BH9HFMS5C",
+      "origin": {
+        "platform": "slack",
+        "chat_id": "C0BH9HFMS5C",
+        "chat_name": "C0BH9HFMS5C",
+        "thread_id": "1784059457.277489"
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file",
+        "web"
+      ],
+      "workdir": null,
+      "fire_claim": null,
+      "preflight_alerted": true,
+      "failure_streak": 1
+    },
+    {
+      "id": "4c268bd72bdd",
+      "name": "pre-call-report-generator",
+      "prompt": "You are the pre-call report agent. Check for any upcoming sales calls and generate pre-call reports. Load the pre-call-report and smartlead-cold-email skills. Deliver the concise report to the configured Slack destination. Do not send unnecessary reminders when no action is required; report only actionable upcoming calls, conflicts, or newly generated reports.",
+      "skills": [
+        "smartlead-cold-email",
+        "pre-call-report"
+      ],
+      "skill": "smartlead-cold-email",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "display": "*/30 * * * *"
+      },
+      "schedule_display": "*/30 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 28
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-08-05T14:25:50.920227-04:00",
+      "paused_reason": null,
+      "created_at": "2026-07-29T21:10:53.086839-04:00",
+      "next_run_at": "2026-08-05T09:00:00-04:00",
+      "last_run_at": "2026-08-05T08:31:25.272214-04:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "slack:C0BHGP6981",
+      "origin": null,
+      "enabled_toolsets": [
+        "terminal",
+        "file",
+        "web",
+        "skills"
+      ],
+      "workdir": null,
+      "fire_claim": null,
+      "no_agent": false
+    },
+    {
+      "id": "5ff7af7572e2",
+      "name": "Instantly cold-email inbox monitor \u2014 every 30 minutes",
+      "prompt": "Run the Instantly cold-email inbox monitor every 30 minutes. Use /opt/data/scripts/run_instantly_reply_daemon.sh (or run `python3 /opt/data/scripts/instantly_reply_daemon.py --once`) from /opt/data. Follow the canonical Instantly monitor workflow: scan all recent cursor-paginated /emails pages, follow next_starting_after until null or the bounded 10-page cap, filter inbound prospect messages using ue_type 2/3 plus connected sending-account exclusion, normalize body.text/body.html, strip quoted text before classification, and preserve local dedup state. Treat HTTP 429 or any fetch failure as an incomplete scan, never as zero replies, and never mark items processed during an incomplete scan. Require and report the __SUMMARY__ completion marker. Emit every newly discovered inbound reply, including positive, referral, neutral/ambiguous, OOO, unsubscribe, hostile, auto-responder, and dead classifications. Before drafting, verify whether a human/operator SENT reply exists after the inbound reply; if so, skip as already handled. Positive/referral/ambiguous human replies receive approval-gated drafts only. Never send any reply automatically. Never use \u201cthank you for responding,\u201d \u201cthank you for the reply,\u201d or \u201cthanks for the reply.\u201d When a prospect asks for a contact number, include Justin\u2019s cell phone as 813-770-3712 and explicitly tell them to text first so Justin knows it\u2019s them. Show drafts inline in the report, not in a sidecar JSON file. Every newly discovered reply must also be logged idempotently to the AI Integraterz Notion sales records: update/create the verified Lead and add an Outreach Activity with the reply body, classification, Instantly message/thread/campaign IDs, timestamp, and handling status; query before creating and do not duplicate. If Notion logging fails, report the exact error and do not claim it was logged. Airtable/Google Sheets logging will be added once the operator provides the chosen destination and credentials/schema. If there is genuinely no new reply, no draft, no error, and no logging event, respond exactly [SILENT].",
+      "skills": [
+        "instantly-cold-email",
+        "scheduled-sales-operations",
+        "instantly-owned-audiences-reply"
+      ],
+      "skill": "instantly-cold-email",
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "display": "*/30 * * * *"
+      },
+      "schedule_display": "*/30 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 731
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-09-06T18:00:05.814917-04:00",
+      "paused_reason": null,
+      "created_at": "2026-07-29T21:11:02.258452-04:00",
+      "next_run_at": "2026-09-06T18:00:00-04:00",
+      "last_run_at": "2026-09-06T17:56:10.448525-04:00",
+      "last_status": "blocked_config",
+      "last_error": "[blocked_config] attached skill 'instantly-cold-email' is not ready: missing env $INSTANTLY_API_KEY. Provide the missing prerequisites or detach the skill from this job.",
+      "last_delivery_error": "platform 'slack' not configured/enabled",
+      "deliver": "slack:C0B02TY6R1T",
+      "origin": null,
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": "/opt/data",
+      "fire_claim": null,
+      "no_agent": false,
+      "preflight_alerted": true,
+      "failure_streak": 1
+    },
+    {
+      "id": "fa480b47be5a",
+      "name": "Daily solar reply and booking monitor",
+      "prompt": "Monitor only the Instantly solar campaign `dbd68956-2dc6-47e4-a56e-5a518db39381` (`solar | open door`). Do not inspect or report any marketing-agency campaign. Use the Instantly REST API with the configured INSTANTLY_API_KEY. Each day, fetch the solar campaign's paginated `/emails` records, identify inbound prospect replies and later outbound records by thread, and report: new inbound replies, positive human replies without a later outbound reply, OOO/auto-responder replies, explicit negative replies, and booked calls if there is a verified booking-system integration or actual booking data available. The string `http://cow.com` is not a verified booking-system integration; do not claim bookings from it and do not browse or submit data to it. Do not send follow-ups automatically until a real booking endpoint and exact approved follow-up copy are configured. Deliver a concise report to the originating Slack conversation. Preserve state on API/rate-limit/pagination errors and clearly report incomplete scans.",
+      "skills": [
+        "instantly-cold-email",
+        "instantly-solar-auto-reply",
+        "scheduled-sales-operations"
+      ],
+      "skill": "instantly-cold-email",
+      "model": null,
+      "provider": null,
+      "provider_snapshot": "openrouter",
+      "model_snapshot": "openai/gpt-5.6-luna",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "display": "0 9 * * *"
+      },
+      "schedule_display": "0 9 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 25
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-09-06T18:00:06.234592-04:00",
+      "paused_reason": null,
+      "created_at": "2026-08-12T13:51:40.461027-04:00",
+      "next_run_at": "2026-09-07T09:00:00-04:00",
+      "last_run_at": "2026-09-06T09:02:14.331133-04:00",
+      "last_status": "error",
+      "last_error": "RuntimeError: Skipped to prevent unintended spend: global inference config drifted since this job was created (model 'openai/gpt-5.6-luna' -> 'z-ai/glm-5.3-flash'), and this job is unpinned. No inference call was made. To run on the new config, pin it explicitly: `cronjob action=update job_id=fa480b47be5a provider=<provider> model=<model>` (or pin the original values to keep them). See #44585.",
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "slack",
+        "chat_id": "C0B02TY6R1T",
+        "chat_name": "C0B02TY6R1T",
+        "thread_id": "1786548236.993979",
+        "user_id": "U01D077J78S"
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": "/opt/data",
+      "fire_claim": null
+    },
+    {
+      "id": "628644656f42",
+      "name": "Instantly cold-email inbox monitor \u2014 weekends",
+      "prompt": "Run the Instantly cold-email inbox monitor. Use the canonical Instantly monitor workflow and classify only the lead-authored reply, stripping quoted text first. Before drafting, verify whether a human SENT reply already exists after the inbound reply; if so, skip as already handled. For positive replies, use the established approved template and pass the QC gate before any send. Never use \u201cthank you for responding,\u201d \u201cthank you for the reply,\u201d or \u201cthanks for the reply.\u201d When a prospect asks for a contact number, include Justin\u2019s cell phone as <tel:8137703712|813-770-3712> and explicitly tell them to text first so Justin knows it\u2019s them, because he usually does not answer calls from unknown numbers. Do not send any approval-gated draft without Justin\u2019s explicit approval. Report only new actionable items and concise run summary. If there is genuinely nothing new to report, respond exactly [SILENT].",
+      "skills": [
+        "instantly-cold-email",
+        "scheduled-sales-operations",
+        "instantly-owned-audiences-reply"
+      ],
+      "skill": "instantly-cold-email",
+      "model": null,
+      "provider": null,
+      "provider_snapshot": "openrouter",
+      "model_snapshot": "openai/gpt-5.6-luna",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 16 * * 6,0",
+        "display": "0 16 * * 6,0"
+      },
+      "schedule_display": "0 16 * * 6,0",
+      "repeat": {
+        "times": null,
+        "completed": 7
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-09-06T18:00:06.405154-04:00",
+      "paused_reason": null,
+      "created_at": "2026-08-15T16:34:49.964971-04:00",
+      "next_run_at": "2026-09-12T16:00:00-04:00",
+      "last_run_at": "2026-09-06T17:56:10.450725-04:00",
+      "last_status": "blocked_config",
+      "last_error": "[blocked_config] attached skill 'instantly-cold-email' is not ready: missing env $INSTANTLY_API_KEY. Provide the missing prerequisites or detach the skill from this job.",
+      "last_delivery_error": "platform 'slack' not configured/enabled",
+      "deliver": "slack:C0B02TY6R1T",
+      "origin": {
+        "platform": "slack",
+        "chat_id": "C0B02TY6R1T",
+        "chat_name": "C0B02TY6R1T",
+        "thread_id": "1786815103.138509",
+        "user_id": "U01D077J78S"
+      },
+      "enabled_toolsets": [
+        "terminal",
+        "file"
+      ],
+      "workdir": "/opt/data",
+      "fire_claim": null,
+      "preflight_alerted": true,
+      "failure_streak": 1
+    },
+    {
+      "id": "a4cf8f6765e5",
+      "name": "Charles MSP campaign responses \u2192 this Slack channel",
+      "prompt": "Run the Charles MSP Instantly reply monitor. Use /opt/data/scripts/msp_reply_monitor.py from /opt/data. Scan the live Instantly inbox for inbound replies belonging only to the Charles MSP campaign (campaign ID 3e011ebb-6428-458d-9a41-5e574fac5a84), deduplicate by message ID, and print every newly discovered reply with sender, company, timestamp, subject, and cleaned body. Deliver output to the current Slack channel root, not a thread. Do not send replies or mutate Instantly messages. Any reply requested by <@U0B73FXFK9N> must be handled only after explicit request/approval, using the original inbound record's eaccount and reply_to_uuid/thread so the response stays in the same email thread/account. Never auto-send.",
+      "skills": [
+        "instantly-cold-email",
+        "scheduled-sales-operations"
+      ],
+      "skill": "instantly-cold-email",
+      "model": null,
+      "provider": null,
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": "msp_reply_monitor.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 8-18 * * *",
+        "display": "*/30 8-18 * * *"
+      },
+      "schedule_display": "*/30 8-18 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 159
+      },
+      "enabled": false,
+      "state": "paused",
+      "paused_at": "2026-09-06T18:00:06.583707-04:00",
+      "paused_reason": null,
+      "created_at": "2026-08-27T17:32:49.112499-04:00",
+      "next_run_at": "2026-09-06T18:00:00-04:00",
+      "last_run_at": "2026-09-06T17:56:10.023386-04:00",
+      "last_status": "error",
+      "last_error": "Script not found: /Users/home/.hermes/profiles/ai-guy-go-to-market/scripts/msp_reply_monitor.py",
+      "last_delivery_error": "platform 'slack' not configured/enabled",
+      "deliver": "slack:C0ATXJT3U4F",
+      "origin": {
+        "platform": "slack",
+        "chat_id": "C0ATXJT3U4F",
+        "chat_name": "C0ATXJT3U4F",
+        "thread_id": "1787865742.753399",
+        "user_id": "U01D077J78S"
+      },
+      "enabled_toolsets": [
+        "terminal"
+      ],
+      "workdir": "/opt/data",
+      "fire_claim": null,
+      "failure_streak": 1
+    }
+  ],
+  "updated_at": "2026-09-06T18:00:06.584294-04:00"
+}
