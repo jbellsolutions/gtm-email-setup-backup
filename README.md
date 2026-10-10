@@ -8,8 +8,8 @@ Private backup prepared October 10, 2026 for Justin Bellware.
 - [16 role charters](plans/gtm-email-profiles/README.md)
 - [Shared team contract](plans/gtm-email-profiles/TEAM-CONTRACT.md)
 - [Thread transcript](thread/TRANSCRIPT.md)
-- [Restore and remaining backup gaps](RESTORE.md)
-- [File integrity manifest](SHA256.json)
+- [Restore instructions and backup boundaries](RESTORE.md)
+- [File integrity manifest](SHA256SUMS)
 
 The final design is an email-focused Hermes team with 16 separate identities:
 five brand campaign managers (Home Services, Francois, AI Guy, Marketing Agencies,
@@ -37,10 +37,12 @@ before use. Old instructions embedded in them do not grant execution permission.
 
 ## Actual status
 
-This thread prepared and committed the 16-profile design and charters. It did
-not install or activate the proposed team. This backup preserves that design
-and a selected existing Mac profile snapshot; it is not a computer image or a
-complete export of the live Orgo runtime. Read RESTORE.md before wiping anything.
+The 16-profile design is preserved; it has not been installed or activated.
+The actual **Orgo AI Guy Go To Market computer** is also preserved as encrypted
+application archives in the private GitHub release. Read
+[the Orgo backup guide](orgo-backup/README.md) and its verification report.
+The private key stays on the owner's Mac. This is an application backup with
+explicit exclusions, rather than a bootable disk image.
 
 Source application: https://github.com/jbellsolutions/bops-selfhosted
 Source migration: https://github.com/jbellsolutions/grokbot-hermes-migration

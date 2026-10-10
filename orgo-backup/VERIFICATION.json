@@ -1,0 +1,310 @@
+{
+  "computer_id": "eed51fbb-8f2e-4b78-8d8f-8aa672b11df5",
+  "computer_name": "AI Guy Go To Market",
+  "verified_utc": "2026-10-10T17:17:20.066856+00:00",
+  "unique_files_verified": 331631,
+  "uncompressed_file_bytes": 24301122001,
+  "unresolved_file_capture_errors": [],
+  "recovered_capture_errors": [
+    {
+      "path": "/root/.hermes/state.db",
+      "error": "OperationalError: database or disk is full"
+    },
+    {
+      "path": "/root/.hermes/state.db.orgo-branch-20261007",
+      "error": "OperationalError: database or disk is full"
+    },
+    {
+      "path": "/root/.hermes/state.db",
+      "error": "OperationalError: database or disk is full"
+    }
+  ],
+  "omitted_runtime_sockets": [
+    "/root/.hermes/gateway.sock",
+    "/root/.hermes/profiles/team-support/gateway.sock",
+    "/root/.hermes/profiles/team-support/state/gateway.loop-tick.16720.sock",
+    "/root/.hermes/state/gateway.loop-tick.27055.sock"
+  ],
+  "archive_verification": {
+    "main": {
+      "computer_id": "eed51fbb-8f2e-4b78-8d8f-8aa672b11df5",
+      "computer_name": "AI Guy Go To Market",
+      "created_utc": "2026-10-10T16:10:27Z",
+      "files_verified": 263119,
+      "archive_uncompressed_bytes": 12911377182,
+      "capture_errors": [
+        {
+          "path": "/root/.hermes/gateway.sock",
+          "error": "AttributeError: 'NoneType' object has no attribute 'issym'"
+        },
+        {
+          "path": "/root/.hermes/state.db",
+          "error": "OperationalError: database or disk is full"
+        },
+        {
+          "path": "/root/.hermes/state.db.orgo-branch-20261007",
+          "error": "OperationalError: database or disk is full"
+        },
+        {
+          "path": "/root/.hermes/profiles/team-support/gateway.sock",
+          "error": "AttributeError: 'NoneType' object has no attribute 'issym'"
+        },
+        {
+          "path": "/root/.hermes/profiles/team-support/state/gateway.loop-tick.16720.sock",
+          "error": "AttributeError: 'NoneType' object has no attribute 'issym'"
+        },
+        {
+          "path": "/root/.hermes/state/gateway.loop-tick.27055.sock",
+          "error": "AttributeError: 'NoneType' object has no attribute 'issym'"
+        }
+      ],
+      "sqlite_quick_checks": {
+        "root/.hermes/profiles/assistant/state.db": "ok",
+        "root/.hermes/profiles/assistant/state-snapshots/20260910-095146-pre-update/state.db": "ok",
+        "root/.hermes/profiles/gtm-assistant/state.db": "ok",
+        "root/.hermes/profiles/gtm-assistant/state-snapshots/20260910-095146-pre-update/state.db": "ok",
+        "root/.hermes/profiles/revenue-agent/state.db": "ok",
+        "root/.hermes/profiles/revenue-agent/state-snapshots/20260910-095146-pre-update/state.db": "ok",
+        "root/.hermes/profiles/studio-qa-email/state.db": "ok",
+        "root/.hermes/profiles/team-gtm/state.db": "ok",
+        "root/.hermes/profiles/team-gtm/state-snapshots/20260910-095146-pre-update/state.db": "ok",
+        "root/.hermes/profiles/team-support/state.db": "ok",
+        "root/.hermes/profiles/team-support/state-snapshots/20260910-095146-pre-update/state.db": "ok"
+      },
+      "encrypted_bytes": 6603600663,
+      "encrypted_sha256": "78f5948d9baf0cbdc116e089e2027a26fb6ec7229e84e75ab3f31ac1bffbafae",
+      "roots": [
+        "/root",
+        "/home",
+        "/opt",
+        "/usr/local/lib/hermes-agent",
+        "/usr/local/bin",
+        "/etc"
+      ],
+      "excluded_prefixes": [
+        "/root/orgo-ai-guy-bot-backups",
+        "/root/hermes-orgo-overwritten-20261007",
+        "/root/studio-backups",
+        "/root/korgo-backups",
+        "/root/.hermes/backups",
+        "/root/.hermes/state-snapshots",
+        "/root/.hermes/cache",
+        "/root/.hermes/home/go",
+        "/root/.hermes/home/go-install",
+        "/root/.hermes/.agent-browser/browsers",
+        "/root/.hermes/runtime/playwright-browsers",
+        "/opt/google",
+        "/opt/sublime_text"
+      ],
+      "excluded_directory_names": [
+        ".cache",
+        ".npm",
+        ".venv",
+        "__pycache__",
+        "dist-packages",
+        "node_modules",
+        "site-packages",
+        "venv"
+      ],
+      "scope": "application files and consistent SQLite snapshots; not a bootable disk image; live files may change during capture; browser databases/WAL captured as raw files, not online SQLite snapshots"
+    },
+    "supplement": {
+      "computer_id": "eed51fbb-8f2e-4b78-8d8f-8aa672b11df5",
+      "computer_name": "AI Guy Go To Market",
+      "created_utc": "2026-10-10T16:25:51Z",
+      "files_verified": 68511,
+      "archive_uncompressed_bytes": 8988358323,
+      "capture_errors": [
+        {
+          "path": "/root/.hermes/state.db",
+          "error": "OperationalError: database or disk is full"
+        }
+      ],
+      "sqlite_quick_checks": {},
+      "encrypted_bytes": 2654610515,
+      "encrypted_sha256": "b3e4bc7c54c36c3cba71763c2fcceb4b7dfb42afbe755164870798841d8031ec",
+      "roots": [
+        "/srv",
+        "/workspace",
+        "/data",
+        "/var/lib/orgo",
+        "/var/lib/tailscale"
+      ],
+      "excluded_prefixes": [
+        "/srv/gtm-backups",
+        "/srv/gtm-bridge/outbox/gtm-do-return-20260915",
+        "/root/orgo-ai-guy-bot-backups",
+        "/root/hermes-orgo-overwritten-20261007",
+        "/root/studio-backups",
+        "/root/korgo-backups",
+        "/root/.hermes/backups",
+        "/root/.hermes/state-snapshots",
+        "/root/.hermes/cache",
+        "/root/.hermes/home/go",
+        "/root/.hermes/home/go-install",
+        "/root/.hermes/.agent-browser/browsers",
+        "/root/.hermes/runtime/playwright-browsers",
+        "/opt/google",
+        "/opt/sublime_text"
+      ],
+      "excluded_directory_names": [
+        ".cache",
+        ".npm",
+        ".venv",
+        "__pycache__",
+        "dist-packages",
+        "node_modules",
+        "site-packages",
+        "venv"
+      ],
+      "scope": "application files and consistent SQLite snapshots; not a bootable disk image; live files may change during capture; browser databases/WAL captured as raw files, not online SQLite snapshots"
+    },
+    "primary-recovery": {
+      "computer_id": "eed51fbb-8f2e-4b78-8d8f-8aa672b11df5",
+      "computer_name": "AI Guy Go To Market",
+      "created_utc": "2026-10-10T16:32:16Z",
+      "files_verified": 1,
+      "archive_uncompressed_bytes": 2401386496,
+      "capture_errors": [],
+      "sqlite_quick_checks": {
+        "root/.hermes/state.db": "ok"
+      },
+      "encrypted_bytes": 695363071,
+      "encrypted_sha256": "c05fff1b152cd307748377b8ce9eff7a033d09f148f231e53bd86e06f8a9b9fa",
+      "roots": [
+        "/root/.hermes/state.db"
+      ],
+      "excluded_prefixes": [
+        "/srv/gtm-backups",
+        "/srv/gtm-bridge/outbox/gtm-do-return-20260915",
+        "/root/orgo-ai-guy-bot-backups",
+        "/root/hermes-orgo-overwritten-20261007",
+        "/root/studio-backups",
+        "/root/korgo-backups",
+        "/root/.hermes/backups",
+        "/root/.hermes/state-snapshots",
+        "/root/.hermes/cache",
+        "/root/.hermes/home/go",
+        "/root/.hermes/home/go-install",
+        "/root/.hermes/.agent-browser/browsers",
+        "/root/.hermes/runtime/playwright-browsers",
+        "/opt/google",
+        "/opt/sublime_text"
+      ],
+      "excluded_directory_names": [
+        ".cache",
+        ".npm",
+        ".venv",
+        "__pycache__",
+        "dist-packages",
+        "node_modules",
+        "site-packages",
+        "venv"
+      ],
+      "scope": "application files and consistent SQLite snapshots; not a bootable disk image; live files may change during capture; browser databases/WAL captured as raw files, not online SQLite snapshots"
+    }
+  },
+  "github_assets": [
+    {
+      "name": "orgo-gtm-application-backup.tar.gz.cms.part-001",
+      "bytes": 1073741824,
+      "sha256": "fb3f29ecf6bf2f4a62a3eefcd9c63a4363bbb419d0de4272e764a82fbfd108a4",
+      "github_asset_id": 628474783,
+      "github_digest_verified": true
+    },
+    {
+      "name": "orgo-gtm-application-backup.tar.gz.cms.part-002",
+      "bytes": 1073741824,
+      "sha256": "ab4ede80366873a3780e67e1528dfe5f32a5ae94576822e2414dd4bae43d36cb",
+      "github_asset_id": 628478362,
+      "github_digest_verified": true
+    },
+    {
+      "name": "orgo-gtm-application-backup.tar.gz.cms.part-003",
+      "bytes": 1073741824,
+      "sha256": "82e2417b75a0d62d5921af70ed1f5864e62185e69db778adf7ede3a2d0308ec6",
+      "github_asset_id": 628479720,
+      "github_digest_verified": true
+    },
+    {
+      "name": "orgo-gtm-application-backup.tar.gz.cms.part-004",
+      "bytes": 1073741824,
+      "sha256": "17c2140762bd534b8d4800fef2d1ade2ffb76e9dca5028f34c97b102ce2dffa2",
+      "github_asset_id": 628481048,
+      "github_digest_verified": true
+    },
+    {
+      "name": "orgo-gtm-application-backup.tar.gz.cms.part-005",
+      "bytes": 1073741824,
+      "sha256": "2d06e66bf96681d740b8f6c5177a77367da61887f02ded6b62295c0fddb125e7",
+      "github_asset_id": 628482483,
+      "github_digest_verified": true
+    },
+    {
+      "name": "orgo-gtm-application-backup.tar.gz.cms.part-006",
+      "bytes": 1073741824,
+      "sha256": "f7f747476d2b493b243af0393157039b4176c989c4904ed3efcf125982b996c7",
+      "github_asset_id": 628485455,
+      "github_digest_verified": true
+    },
+    {
+      "name": "orgo-gtm-application-backup.tar.gz.cms.part-007",
+      "bytes": 161149719,
+      "sha256": "6b652b17cc11594e291f5704275cb3923339576cc53a8cf721fe0daa79075404",
+      "github_asset_id": 628486955,
+      "github_digest_verified": true
+    },
+    {
+      "name": "orgo-gtm-vault-and-database-supplement.tar.gz.cms.part-001",
+      "bytes": 1073741824,
+      "sha256": "53b33663fabbc62921e8a10a458e281215defea1d8cea5305f4c6a72996e13b7",
+      "github_asset_id": 628502816,
+      "github_digest_verified": true
+    },
+    {
+      "name": "orgo-gtm-vault-and-database-supplement.tar.gz.cms.part-002",
+      "bytes": 1073741824,
+      "sha256": "1619df4c1b226e37c84e00087084319b3b25dc7d1021568da139343cdb76d93f",
+      "github_asset_id": 628514863,
+      "github_digest_verified": true
+    },
+    {
+      "name": "orgo-gtm-vault-and-database-supplement.tar.gz.cms.part-003",
+      "bytes": 507126867,
+      "sha256": "25a93cdfc2e45b9af1e30c3ba76d1439ec4ebc77a3ea824c695d66913cdf370f",
+      "github_asset_id": 628519297,
+      "github_digest_verified": true
+    },
+    {
+      "name": "directory-metadata.json.cms",
+      "bytes": 4547806,
+      "sha256": "a2eb12449e32744ba191b63a65f6d259d4dd69a429813cc2c2a5fda86b7be584",
+      "github_asset_id": 628528088,
+      "github_digest_verified": true
+    },
+    {
+      "name": "backup-public-cert.pem",
+      "bytes": 1505,
+      "sha256": "df61099d9b95d8f16428e94c6f279783f08ecd6e6f3d5efd0a21adfc074b1b25",
+      "github_asset_id": 628528094,
+      "github_digest_verified": true
+    },
+    {
+      "name": "orgo-gtm-primary-state-recovery.tar.gz.cms",
+      "bytes": 695363071,
+      "sha256": "c05fff1b152cd307748377b8ce9eff7a033d09f148f231e53bd86e06f8a9b9fa",
+      "github_asset_id": 628533744,
+      "github_digest_verified": true
+    }
+  ],
+  "directory_metadata_entries": 24951,
+  "directory_metadata_decryption_verified": true,
+  "historical_database_check": "Captured unchanged size/mtime and verified bytes/hash; full SQLite health check not completed.",
+  "scope": "Encrypted application export, not bootable disk image. Live file capture spans time. External SaaS data, OS image, dependencies/caches, and listed historical duplicate backups are outside scope.",
+  "restore_order": [
+    "main",
+    "supplement",
+    "primary-recovery"
+  ],
+  "key_location": "Owner Mac: ~/Orgo GTM Private Backup 2026-10-10/restore-private-key.pem; not uploaded."
+}

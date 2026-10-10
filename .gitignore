@@ -6,3 +6,10 @@
 auth.json
 node_modules/
 __pycache__/
+
+# Private restore material and encrypted release assets stay outside Git.
+*-private-key.pem
+*.private.json
+*.cms
+*.cms.part-*
+restored-application.tar.gz

@@ -3,7 +3,7 @@
 ## Restore the preserved setup
 
 1. Clone this private repository with your GitHub account.
-2. Verify SHA256.json against every listed file before restoring.
+2. Verify SHA256SUMS against every listed file before restoring.
 3. Read plans/GTM_COLD_EMAIL_PLAN.md, the profile-pack index, and TEAM-CONTRACT.md.
 4. Audit the new machine's installed Hermes version and actual supported profile,
    skill and gateway commands. These charters are not executable profile installs.
@@ -20,23 +20,26 @@
 9. If installing Better Than GrokBot, follow its current INSTALL.md and startup
    checklist. This backup does not establish those checks have passed.
 
-## Not included: preserve separately before a computer wipe
+## Restore the Orgo computer
 
-- Secret values, .env files, OAuth tokens, keychain credentials and browser cookies.
-- Hermes session/state/memory databases, private contact datasets, uploaded files,
-  complete run outputs and live Orgo filesystem contents.
-- A full machine snapshot, all Mac files, or the 6.7 GB existing profile tree.
-- Unrelated uncommitted Bops application changes in the source checkout.
-- The entire 1.8 GB raw GrokBot machine backup and all later source-project files.
-- External Instantly, Listmonk, Attio, ClickUp and Databox SaaS/server data. A Git
-  repository does not snapshot those services or their current configuration.
+Use [the encrypted application backup guide](orgo-backup/RESTORE.md).
+The private release preserves application files, credential files, Hermes
+history/state, uploaded data and GTM vault content from the identified Orgo
+computer. Sensitive contents are encrypted; the key remains on the Mac.
+Keep that key somewhere independent of any computer you wipe.
 
-For an Orgo wipe, capture a provider-supported snapshot or an independently
-verified private export of that specific computer's files and live configuration.
-For a Mac wipe, preserve the local source projects, raw backups, keychain access,
-Hermes history and other required files in a separately verified encrypted backup.
-Keep decryption credentials somewhere that will survive the wipe.
+## Backup boundaries
 
-This repository is a verified sanitized setup/thread backup. It does not establish
-that either computer is safe to wipe. The backup request's computer choice was
-still awaiting clarification when this package was prepared.
+- This is an application export, not a full bootable disk image. See the exact
+  roots and cache/dependency/historical-duplicate exclusions in the Orgo report.
+- Instantly, Listmonk, Attio, ClickUp and Databox service-side records remain
+  external; GitHub does not snapshot those services.
+- Mac keychain data, unrelated Mac files and unrelated uncommitted Bops app
+  changes are outside this Orgo backup.
+- The full raw GrokBot machine image is outside this email-specific repository;
+  selected role sources and the current Orgo application files are preserved.
+- A live file export spans time. SQLite online snapshots were used for supported
+  application databases; browser files were copied live and may need new logins.
+
+Follow the verification report when deciding what to restore. Review all restored
+jobs and sending infrastructure before activation to avoid duplicate sends.

@@ -1,6 +1,6 @@
 # GTM thread transcript
 
-Sanitized export through the backup request, October 10, 2026. Tool events are in cloudroom-events.json.
+Sanitized export through the Orgo backup work, October 10, 2026. Tool events are archived separately.
 
 ## User
 
@@ -184,3 +184,107 @@ Which computer are you wiping—the Orgo go-to-market computer or this Mac? I’
 - Orgo go-to-market computer
 - This Mac
 - Both
+
+## Assistant
+
+I’m creating a dedicated private backup repo. It will include the 16 charters, revised plan, this thread, the relevant GrokBot source documents, and a sanitized snapshot of the existing go-to-market profile’s skills and configuration.
+
+Credentials, browser logins, and live databases need separate preservation. I’ll list those gaps explicitly so this backup isn’t mistaken for a restorable computer image.
+
+## Assistant
+
+The private repo is pushed. I’m verifying it from a fresh clone against the file hashes.
+
+It preserves the setup and thread, but it is **not a full computer backup**. Browser sessions, credentials, Hermes history databases, and the Orgo filesystem still need separate preservation before a wipe.
+
+## Assistant
+
+Backed up to the private repo: [GTM Email Setup Backup](https://github.com/jbellsolutions/gtm-email-setup-backup).
+
+Includes the thread, all 16 charters, setup plan, source documents, sanitized existing skills/configuration, and restore instructions. Verified a fresh GitHub clone against **1,178 file hashes**; the secret scan passed.
+
+**Before wiping:** this preserves the setup, not the whole computer. Credentials, browser sessions, Hermes history databases, and live Orgo files aren’t included. I still need to know whether you’re wiping the Mac or Orgo computer to preserve those remaining pieces.
+
+## User
+
+orgo
+
+## Assistant
+
+I’ll locate the go-to-market Orgo computer and preserve its live files and configuration before you wipe it. I’ll keep credentials out of GitHub and verify the backup’s restore path.
+
+## Assistant
+
+I found **AI Guy Go To Market**. It has 68 GB in use, including live Hermes history, browser state, campaign files, and running services that weren’t in the GitHub backup.
+
+I’ll preserve the recoverable application data in an encrypted backup, with the decryption key retained on your Mac. Reinstallable dependencies and caches will be excluded. Please hold off on wiping Orgo until the export is verified.
+
+## Assistant
+
+The export reached locked Chrome databases. I’ve adjusted the backup to preserve those browser files as they are; they may require fresh logins after restore. Hermes application databases will still use consistent SQLite snapshots.
+
+I haven’t changed the campaigns or stopped the existing agents.
+
+## Assistant
+
+The encrypted export is transferring to your Mac. It includes the live profiles, skills, campaign files, application databases, and service definitions. After transfer, I’ll check decryption and file hashes, then upload the encrypted archive to the private GitHub repo.
+
+## Assistant
+
+I also found the live GTM vault and bridge data under `/srv`, so I’m adding those to the backup. I’ll record the excluded old machine backups, caches, and dependencies in the restore notes. The active campaign assets and application state are the priority.
+
+## Assistant
+
+More than 1 GB of encrypted data has reached your Mac. I’m checking the archive’s scope and restore integrity before calling it ready. The decryption key will stay off GitHub, in the protected backup folder on your Mac.
+
+## Assistant
+
+The export is still progressing through the installed runtimes and preserved work files. I’ll publish the verification results alongside the encrypted files, so you can see exactly what was captured and what must be reinstalled.
+
+## Assistant
+
+About 1.8 GB has transferred so far. The backup is encrypted before it leaves Orgo, and I’ve verified that the separate directory-metadata file decrypts correctly. I’ll split the main archive into numbered release files if it exceeds GitHub’s per-file limit.
+
+## Assistant
+
+The restore check exposed an OpenSSL limit with CMS files over 2 GB. I’m adding a streaming decryptor and testing it against the archive’s file hashes. The encrypted data is still intact; the restore instructions need this adjustment.
+
+## Assistant
+
+The streaming restore check is working through the archive while the export continues. About 3 GB has transferred. I’m keeping the full file inventory local because it can contain private filenames; GitHub will receive the encrypted files and a verification summary.
+
+## Assistant
+
+The export now includes the saved session files as well as the current configuration and skills. Around 3.6 GB has transferred. The remaining steps are the GTM vault supplement, database checks, and GitHub release verification.
+
+## Assistant
+
+The main export is approaching the end of the Hermes data. I’m also checking for capture errors; any historical files that need a separate recovery pass will be listed rather than silently treated as backed up.
+
+## Assistant
+
+The main archive is near completion. I’m uploading its completed encrypted parts to a draft GitHub release while validation runs. I’ll publish the release only after the full archive and the GTM supplement pass their checks.
+
+## Assistant
+
+The first encrypted release part is uploaded and matches GitHub’s checksum. The remaining parts are uploading as the main export finishes. I’m keeping the release in draft until the archive and GTM vault supplement are verified.
+
+## Assistant
+
+Four release parts are uploaded and checksum-verified. The main export is finishing the installed Hermes source files; then I’ll capture the separate GTM vault and publish the combined restore report.
+
+## Assistant
+
+The main archive passed its file-hash check, but two SQLite captures failed because Orgo ran out of temporary disk space. One is the main Hermes state database, so I’m recovering it separately before publishing the backup. The other skipped entries are runtime sockets, which are recreated on startup.
+
+## Assistant
+
+The main archive is verified: **263,119 files**, about **6.6 GB encrypted**, and seven checksum-verified GitHub parts. The supplement is capturing the GTM vault and recovering the two databases omitted from the first pass. Those databases are the last important gaps.
+
+## Assistant
+
+The separate main-state snapshot has been captured, and its restore check is underway. The supplement is now preserving the older database copy and finishing the GTM vault backup.
+
+## Assistant
+
+The full directory-metadata backup decrypts correctly, and the first supplement part is uploaded with a matching GitHub checksum. I’m finishing the remaining part and the combined restore report now.
