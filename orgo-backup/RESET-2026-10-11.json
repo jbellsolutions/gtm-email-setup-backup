@@ -1,0 +1,29 @@
+{
+  "source_id": "eed51fbb-8f2e-4b78-8d8f-8aa672b11df5",
+  "source_name": "AI Guy Go To Market",
+  "workspace_id": "42c25daa-3cb2-47ca-8aab-dcec0c9c6b2f",
+  "source_hardware": {
+    "os": "linux",
+    "ram": 8,
+    "cpu": 2
+  },
+  "workspace_verified": true,
+  "deletion_response": {
+    "success": true
+  },
+  "deleted_utc": "2026-10-12T03:53:36.495269+00:00",
+  "source_absence_verified": true,
+  "replacement": {
+    "id": "e0edd823-cfd9-44b9-9434-9d8d81f24b0f",
+    "name": "Demand Gen",
+    "os": "linux",
+    "cpu": 2,
+    "ram": 8,
+    "status": "running"
+  },
+  "created_utc": "2026-10-12T03:53:38.594216+00:00",
+  "replacement_running_verified": true,
+  "old_gtm_paths_absent_verified": true,
+  "disk_size_gb": 80,
+  "authorization_note": "Owner explicitly instructed deletion after being informed that the original private-key folder was missing and source files had changed since the export. Owner stated the backup was verified. No additional export was taken."
+}

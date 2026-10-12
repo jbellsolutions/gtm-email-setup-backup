@@ -31,3 +31,17 @@ and [the archive verifier](verify-backup.py). They use Python's `cryptography`
 package, available on the owner's Mac. OpenSSL's direct CMS decoder can fail on
 archives above its ASN.1 buffering limit, so use the streaming helper for large
 files. The small directory metadata companion can use direct OpenSSL.
+
+## Computer replacement on October 11, 2026
+
+The owner explicitly authorized deletion of the source after stating the backup
+was verified. The original Orgo computer was deleted and replaced with a fresh
+**Demand Gen** computer, `e0edd823-cfd9-44b9-9434-9d8d81f24b0f` (8 GB RAM,
+2 CPUs, 80 GB disk). Running state and absence of old GTM paths were checked.
+See [reset record](RESET-2026-10-11.json).
+
+The encrypted release assets still matched their recorded GitHub digests.
+At this later check, the original Mac key folder was missing and its current
+location could not be verified. The original private key remains required to
+decrypt those assets. The archives remain the October 10 capture; changes made
+afterward were not exported before the owner-authorized deletion.
